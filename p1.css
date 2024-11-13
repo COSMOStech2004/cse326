@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: whitesmoke;
+
+}
+.vid{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+    .vid{
+        width: 100%;
+        height:auto;
+    }
+    
+} 
+@media (max-aspect-ratio: 16/9) {
+    .vid{
+        width: auto;
+        height: 100%;
+    }
+}
+.navbar {
+    background-color: #1a1a1a; /* Navbar background */
+    padding: 15px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* Link color */
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;/* Adjust based on your preference */
+    width: 0;
+    height: 2px;
+    background-color: #ff4081; /* Underline color */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff4081; /* Change link color on hover */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+.search-container {
+ position:absolute; /* Use absolute positioning */
+    bottom: 200px; /* Adjust this value to position the search bar */
+    left: 495px; /* Adjust this value to position the search bar */
+    width: 300px; /* Set width of the search bar */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff4081; /* Border color */
+    border-radius: 5px;
+    background-color: #1a1a1a; /* Input background */
+    color: #ffffff; /* Input text color */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    
+}
+
+input[type="text"]:focus {
+    border-color: #ffffff; /* Change border color on focus */
+    outline: none; /* Remove outline */
+    transform: scale(1.05); /* Breath effect: grow on focus */
+}
+
+.suggestions {
+    position: absolute;
+    top: 40px; /* Adjust based on input height */
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a; /* Suggestions background */
+    border: 2px solid #ff4081; /* Suggestions border */
+    border-radius: 5px;
+    max-height: 200px; /* Max height of suggestions */
+    overflow-y: auto; /* Scroll if too many suggestions */
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: none; /* Hide suggestions by default */
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion-item:hover {
+    background-color: #ff4081; /* Highlight on hover */
+}
